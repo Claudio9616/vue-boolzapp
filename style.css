@@ -1,0 +1,61 @@
+.header-green{
+    background-color: #009688;
+    height: 200px;
+}
+.background-gray{
+    background-color: #DADBD3;
+    height: calc(100% - 200px);
+}
+.main{
+    height: 100vh;
+}
+.nav-bar{
+    background-color: #FAFAFA;
+    overflow: auto;
+}
+.container-chat{
+    background-image: url(img/mine.jpg);
+    height: 100%
+}
+.center-chat{
+    height: calc(100% - 128px);
+    overflow: auto;
+}
+ul{
+    list-style-type: none;
+    padding-left: 10px;
+}
+img{
+    width: 40px;
+    border-radius: 50%;
+}
+.nav-bar-io ul:last-child{
+    flex-basis: 80px;
+}
+.nav-bar-io{
+    background-color: #EAEAEA;
+    width: 100%;
+}
+.notifiche i:first-child{
+    background-color: white;
+    color: #8EDAFC;
+    font-size: 1.5rem;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.p-bold{
+    font-weight: bold;
+}
+.p-gray{
+    color: gray;
+}
+.my-cursor{
+    cursor: pointer;
+}
+li span{
+    margin-left: 8px;
+}
+.w-900{
+    width: 900px;
+}

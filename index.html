@@ -11,7 +11,104 @@
     <script src="script/data.js"></script>
 </head>
 <body>
-    <script src="script/script.js"></script>
- 
+    <div id="root">
+        <div class="header-green">
+            <div class="background-gray">
+                <div class="container">
+                    <div class="row main">
+                        <div class="nav-bar col col-3 px-0">
+                            <div class="nav-bar-io d-flex justify-content-between pt-2">
+                                <ul class="d-flex align-items-center ps-0">
+                                    <li>
+                                        <img :src="`img/avatar${data.user.avatar}.jpg`" :alt="`${data.user.name}`">
+                                    </li>
+                                    <li>{{data.user.name}}</li>
+                                </ul>
+                                <ul class="d-flex align-items-center justify-content-between ps-0 pe-2">
+                                    <li>
+                                        <i class="fa-solid fa-spinner"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-message"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="notifiche pt-3 d-flex bg-info ps-2">
+                                <i class="fa-solid fa-bell-slash"></i>
+                                <div class="ps-2">
+                                    <p class="mb-0 p-bold">Ricevi notifiche di nuovi messaggi</p>
+                                    <p class="text-decoration-underline p-gray">Attiva notifiche desktop</p>
+                                </div>                     
+                            </div> 
+                            <div>                     
+                                <nav class="navbar bg-body-tertiary">
+                                    <form class="container-fluid">
+                                      <div class="input-group">
+                                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass my-cursor"></i></span>
+                                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                      </div>
+                                    </form>
+                                </nav>
+                            </div> 
+                            <ul class="bg-white">
+                                <li class="py-2" v-for="contact in data.contacts">
+                                    <img .src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                    <span>{{contact.name}}</span>
+                                </li>
+                            </ul>                  
+                        </div>
+                        <div class="container-chat col col-9 px-0">
+                            <div class="header-chat">
+                                <div class="nav-bar-io d-flex justify-content-between">
+                                    <ul class="d-flex align-items-center ps-3 gap-2">
+                                        <li>
+                                            <img :src="`img/avatar${data.contacts.avatar}.jpg`" alt="">
+                                        </li>
+                                        <li>
+                                            <p class="mb-0 fw-bold">{{data.contacts.name}}</p>
+                                            <p class="mb-0 text-secondary">Ultimo messaggio alle ore</p>
+                                        </li>
+                                    </ul>
+                                    <ul class="d-flex align-items-center justify-content-between ps-0 pe-2">
+                                        <li>
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-paperclip"></i>
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="center-chat">
+                                
+                            </div>
+                            <div class="footer-chat">
+                                <div class="nav-bar-io d-flex justify-content-between pt-2">
+                                    <ul class="d-flex align-items-center ps-3">
+                                        <li>
+                                            <i class="fa-regular fa-face-smile me-3"></i>
+                                        </li>
+                                        <li>
+                                            <input type="text" class="form-control w-900 me-3" placeholder="Cerca o inizia una nuova chat">
+                                        </li>
+                                        <li>
+                                            <i class="fa-solid fa-microphone"></i>
+                                        </li>
+                                    </ul>                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script> 
 </body>
 </html>
