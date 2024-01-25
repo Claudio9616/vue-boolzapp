@@ -1,15 +1,11 @@
 console.log(Vue)
 const {user, contacts} = data
-const app = createApp({
-    name: 'Boolzap',
-    data(){
+const app = Vue.createApp({
+    data (){
         return {
-           user,
-           contacts
+            user,
+            contacts
         }
-    },
-    methods: {
-       
     }
 })
 app.mount('#root')
