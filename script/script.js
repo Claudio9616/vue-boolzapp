@@ -1,11 +1,11 @@
 console.log(Vue)
-
-const {createApp} = Vue
+const {user, contacts} = data
 const app = createApp({
     name: 'Boolzap',
     data(){
         return {
-           data
+           user,
+           contacts
         }
     },
     methods: {
