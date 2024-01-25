@@ -1,7 +1,7 @@
 console.log(Vue)
 const {user, contacts} = data
 const app = Vue.createApp({
-    data (){
+    data() {
         return {
             user,
             contacts

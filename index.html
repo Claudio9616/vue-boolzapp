@@ -21,9 +21,9 @@
                         <!-- DATI USER -->
                         <ul class="d-flex align-items-center ps-0">
                             <li>
-                                <img :src="`img/avatar${data.user.avatar}.jpg`" :alt="`${data.user.name}`">
+                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="`${user.name}`">
                             </li>
-                            <li>{{data.user.name}}</li>
+                            <li>{{user.name}}</li>
                         </ul>
                         <!-- ICONE USER -->
                         <ul class="d-flex align-items-center justify-content-between ps-0 pe-2">
@@ -94,7 +94,24 @@
                     </div>
                     <!-- INIZIO CENTER CHAT -->
                     <div class="center-chat">
-                        
+                       <div class="flex-grow-1 overflow-auto">                       
+                        <ul class="px-3">
+                             <!-- SENT MESSAGE -->
+                            <li class="message-container p-3 sent">
+                                <div class="message p-2 rounded-3">
+                                    <p class="mb-0">Hai portato a spasso il cane?</p>
+                                    <time datetime="xxx">25/01/2024 - 12:20</time>
+                                </div>
+                            </li>
+                            <!-- RECEIVED MESSAGE -->
+                            <li class="message-container p-3 received">
+                                <div class="message p-2 rounded-3">
+                                    <p class="mb-0">Si</p>
+                                    <time datetime="xxx">25/01/2024 - 12:20</time>
+                                </div>
+                            </li>
+                        </ul>
+                       </div> 
                     </div>
                     <!-- INIZIO FOOTER CHAT -->
                     <div class="footer-chat">

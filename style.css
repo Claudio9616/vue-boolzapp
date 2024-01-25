@@ -56,6 +56,24 @@ img{
 li span{
     margin-left: 8px;
 }
-.w-900{
-    width: 900px;
+.message-container{
+    display: flex;
+}
+.message-container.sent{
+    justify-content: flex-end;
+}
+.message-container.received{
+    justify-content: flex-start;
+}
+.message-container.sent .message{
+    background-color: #D5F9BA;
+}
+.message-container.received .message{
+    background-color: white;
+}
+.message-container time{
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: gray;
 }
