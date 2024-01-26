@@ -52,14 +52,14 @@
                             <form class="container-fluid">
                               <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-magnifying-glass my-cursor"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchText">
                               </div>
                             </form>
                         </nav>
                     </div> 
                     <!-- LISTA CONTATTI -->
                     <ul class="bg-white">
-                        <li class="py-2" v-for="contact in contacts">
+                        <li class="py-2" v-for="contact in filteredContacts" :key="contact.id" @click="setCurrentId(contact.id)" role="button">
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             <span>{{contact.name}}</span>
                         </li>
@@ -72,11 +72,11 @@
                         <div class="nav-bar-io d-flex justify-content-between">
                             <ul class="d-flex align-items-center ps-3 gap-2">
                                 <li>
-                                    <img src="img/avatar_1.jpg" alt="">
+                                    <img :src="`img/avatar${currentId.avatar}.jpg`" :alt="currentId.name">
                                 </li>
                                 <li>
-                                    <p class="mb-0 fw-bold">Michele</p>
-                                    <p class="mb-0 text-secondary">Ultimo messaggio alle ore</p>
+                                    <p class="mb-0 fw-bold">{{currentId.name}}</p>
+                                    <p class="mb-0 text-secondary">Ultimo messaggio alle ore:</p>
                                 </li>
                             </ul>
                             <ul class="d-flex align-items-center justify-content-between ps-0 pe-2">
@@ -97,19 +97,13 @@
                        <div class="flex-grow-1 overflow-auto">                       
                         <ul class="px-3">
                              <!-- SENT MESSAGE -->
-                            <li class="message-container p-3 sent">
+                            <li class="message-container p-3" v-for="message in currentChat"
+                            :class="message.status === 'sent' ? 'sent' : 'received'">
                                 <div class="message p-2 rounded-3">
-                                    <p class="mb-0">Hai portato a spasso il cane?</p>
-                                    <time datetime="xxx">25/01/2024 - 12:20</time>
+                                    <p class="mb-0">{{message.text}}</p>
+                                    <time :datetime="message.date">{{message.date}}</time>
                                 </div>
-                            </li>
-                            <!-- RECEIVED MESSAGE -->
-                            <li class="message-container p-3 received">
-                                <div class="message p-2 rounded-3">
-                                    <p class="mb-0">Si</p>
-                                    <time datetime="xxx">25/01/2024 - 12:20</time>
-                                </div>
-                            </li>
+                            </li>                           
                         </ul>
                        </div> 
                     </div>
@@ -120,7 +114,8 @@
                                 <i class="fa-regular fa-face-smile" role="button"></i>
                             </div>
                             <div class="col-10">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="message"
+                                @keyup.enter.trim="sendMessage">
                             </div>
                             <div class="col-1 d-flex justify-content-center">
                                 <i class="fa-solid fa-microphone fa-2x" role="button"></i>
@@ -133,6 +128,3 @@
     </div>     
 </body>
 </html>
-<!-- METTERE LE CLASSI DEI MESSAGGI -->
-
-<!-- ritoccare la lista utenti, il profilo user e agganciare l'utente nell'heder chat -->
